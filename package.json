@@ -6,8 +6,12 @@
     "build:client": "NODE_ENV=production webpack --config webpack.prod.js",
     "build:server": "NODE_ENV=production babel server -d dist",
     "analyze": "NODE_ENV=production webpack --config webpack.analyze.js",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install npm && run build",
     "test": "jest --watch",
     "lint": "eslint --ext .js --ext .jsx ."
+  },
+  "engines": {
+    "node": "10.16.0"
   },
   "dependencies": {
     "@babel/register": "^7.9.0",
